@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" group="system" method="upgrade">
+	<name>PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT</name>
+	<author>CN-Tools | Clemens Neubauer</author>
+	<creationDate>2017 July</creationDate>
+	<copyright>Copyright 2017 (C) Clemens Neubauer. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>cn-tools@gmx.at</authorEmail>
+	<authorUrl>https://github.com/cn-tools/</authorUrl>
+	<version>0.0.1</version>
+
+	<description>PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_DESC</description>
+
+	<files>
+		<filename plugin="plg_cntools_google_analytics_optout">plg_cntools_google_analytics_optout.php</filename>
+		<filename plugin="plg_cntools_google_analytics_optout">index.html</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_plg_cntools_google_analytics_optout.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_plg_cntools_google_analytics_optout.sys.ini</language>
+<!--
+		<language tag="de-DE">de-DE/de-DE.plg_system_plg_cntools_google_analytics_optout.ini</language>
+		<language tag="de-DE">de-DE/de-DE.plg_system_plg_cntools_google_analytics_optout.sys.ini</language>
+		<language tag="de-AT">de-AT/de-AT.plg_system_plg_cntools_google_analytics_optout.ini</language>
+		<language tag="de-AT">de-AT/de-AT.plg_system_plg_cntools_google_analytics_optout.sys.ini</language>
+-->
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="plg_cntools_google_analytics_optout Updates">https://raw.githubusercontent.com/cn-tools/plg_cntools_google_analytics_optout/master/updateversion.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params">
+			<fieldset name="custom" label="PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_CONFIG">
+                <field
+                        name="uaid"
+                        type="text"
+                        size="15"
+                        default=""
+                        label="PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_UAID"
+                        description="PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_UAID_DESC"
+                        filter="raw"
+						required="true"
+                />
+
+                <field
+                        name="jsfunc"
+                        type="text"
+                        size="15"
+                        default="gaOptout"
+                        label="PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_JSFUNC"
+                        description="PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_JSFUNC_DESC"
+                        filter="raw"
+						required="true"
+                />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
