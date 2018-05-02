@@ -55,7 +55,14 @@
                         filter="raw"
 						required="true"
                 />
-			</fieldset>
+
+				<field 
+					name="note" 
+					type="note" 
+					description="PLG_CNTOOLS_GOOGLE_ANALYTICS_OPTOUT_ALERT_NOTE"
+				/>
+
+				</fieldset>
 		</fields>
 	</config>
 </extension>

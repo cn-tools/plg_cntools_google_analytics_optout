@@ -85,6 +85,13 @@ class PlgSystemPlg_cntools_google_analytics_optout extends JPlugin
 	/*-------------------------- getAnalyticsOptOutCode -------------------------*/
 	private function getAnalyticsOptOutCode($aAnalyticsID, $aJsFuncName)
 	{
+		$lAlertMsg = JText::_('PLG_CNTOOLS_GA_OPTOUT_ALERT');
+		if ($lAlertMsg == 'PLG_CNTOOLS_GA_OPTOUT_ALERT') { $lAlertMsg =''; }
+		if ($lAlertMsg != '')
+		{
+			$lAlertMsg = ' alert(\'' . $lAlertMsg . '\');';
+		}
+		
 		return "var GADisableStr = 'ga-disable-" . $aAnalyticsID . "';
 if (document.cookie.indexOf(GADisableStr + '=true') > -1) {
   window[GADisableStr] = true;
@@ -92,6 +99,7 @@ if (document.cookie.indexOf(GADisableStr + '=true') > -1) {
 function ".$aJsFuncName."() {
   document.cookie = GADisableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
   window[GADisableStr] = true;
+  ".$lAlertMsg."
 }";
 	}
 }
